@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Projet_C_Sharp": {
+      "commandName": "Project",
+      "commandLineArgs": "30000\r\n0,70\r\n"
+    }
+  }
+}
