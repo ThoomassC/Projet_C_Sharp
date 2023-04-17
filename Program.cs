@@ -25,7 +25,7 @@ class Program
         double salaireBrutMensuel = salaireBrutAnnuel / 12;
         double salaireNetAnnuel = salaireBrutAnnuel * tauxImpots;
         double salaireNetMensuel = salaireNetAnnuel / 12;
-        double salaireBrutDecembre = salaireNetMensuel + (salaireBrutMensuel * prime);
+        double salaireBrutDecembre = salaireNetMensuel + (salaireBrutAnnuel * prime);
 
         Console.WriteLine("Le salaire brut annuel est de {0:C}, le salaire brut mensuel est de {1:C}, le salaire net annuel est de {2:C} et le salaire net mensuel est de {3:C}.", salaireBrutAnnuel, salaireBrutMensuel, salaireNetAnnuel, salaireNetMensuel);
 
@@ -38,10 +38,10 @@ class Program
                 case "Aout":
                     continue;
                 case "Décembre":
-                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireBrutDecembre}");
+                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireBrutDecembre}€");
                     break;
                 default:
-                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireNetMensuel}");
+                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireNetMensuel}€");
                     break;
             }
         }
