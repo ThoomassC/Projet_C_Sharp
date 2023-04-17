@@ -24,26 +24,6 @@ class Program
         double salaireBrutMensuel = salaireBrutAnnuel / 12;
         double salaireNetAnnuel = salaireBrutAnnuel * tauxImpots;
         double salaireNetMensuel = salaireNetAnnuel / 12;
-        double salaireBrutMensuelDecembre = salaireBrutAnnuel + (salaireBrutAnnuel * prime) / 12;
-        int salaireNetMensuelAout = 0;
-
-        IList<string> listMois = new List<string>() { "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" };
-          
-        foreach (string mois in listMois)
-        {
-            switch (mois)
-            {
-                case "Août":
-                    Console.WriteLine("Le mois de l'année est le {0:C}, Le salaire brut annuel est de {1:C}", mois, salaireNetMensuelAout);
-                    break;
-                case "Décembre":
-                    Console.WriteLine("Le mois de l'année est le {0:C}, Le salaire brut annuel est de {1:C}", mois, salaireBrutMensuelDecembre);
-                    break;
-                default:
-                    Console.WriteLine("Le mois de l'année est le {0:C}, Le salaire brut annuel est de {1:C}", mois, salaireNetMensuel);
-                    break;
-            }
-        }
 
         Console.WriteLine("Le salaire brut annuel est de {0:C}, le salaire brut mensuel est de {1:C}, le salaire net annuel est de {2:C} et le salaire net mensuel est de {3:C}.", salaireBrutAnnuel, salaireBrutMensuel, salaireNetAnnuel, salaireNetMensuel);
 
