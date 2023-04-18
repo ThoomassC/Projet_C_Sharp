@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Projet_C_Sharp.User;
 
 
 class Program
@@ -7,6 +8,11 @@ class Program
     static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.UTF8;
+
+        User user = new User();
+
+        user.Person("Thomas", 18);
+        user.interetCompose(10000, 5, 0.03);
 
         if (args.Length < 2)
         {
@@ -20,11 +26,30 @@ class Program
             return;
         }
 
+        double prime = 0.10;
         double salaireBrutMensuel = salaireBrutAnnuel / 12;
         double salaireNetAnnuel = salaireBrutAnnuel * tauxImpots;
         double salaireNetMensuel = salaireNetAnnuel / 12;
+        double salaireBrutDecembre = salaireBrutMensuel + (salaireBrutAnnuel * prime);
 
         Console.WriteLine("Le salaire brut annuel est de {0:C}, le salaire brut mensuel est de {1:C}, le salaire net annuel est de {2:C} et le salaire net mensuel est de {3:C}.", salaireBrutAnnuel, salaireBrutMensuel, salaireNetAnnuel, salaireNetMensuel);
+
+        IList listMois = new List<string>() { "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre" };
+
+        foreach (var mois in listMois)
+        {
+            switch (mois)
+            {
+                case "Aout":
+                    continue;
+                case "Décembre":
+                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireBrutDecembre}€");
+                    break;
+                default:
+                    Console.WriteLine($"Le mois est {mois}, le salaire net mensuel est de {salaireNetMensuel}€");
+                    break;
+            }
+        }
 
         switch (true)
         {
@@ -41,7 +66,6 @@ class Program
                 Console.WriteLine("Aucune action recommandée.");
                 break;
         }
-
 
         Console.WriteLine("salaireNetAnnuel :" + salaireNetAnnuel);
 
