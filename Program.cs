@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using System.Reflection.Metadata;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Projet_C_Sharp.User;
 
 
 class Program
@@ -8,6 +10,11 @@ class Program
     static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.UTF8;
+
+        User user = new User();
+
+        user.Person("Thomas", 18);
+        user.interetCompose(10000, 5, 0.03);
 
         if (args.Length < 2)
         {
